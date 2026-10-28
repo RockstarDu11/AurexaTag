@@ -1,0 +1,38 @@
+# ==================== AurexaTag (1.8.8) ====================
+# Tag animé au-dessus de la tête des joueurs qui en ont un. Le pseudo normal reste visible dessous.
+# Donner un tag :  /tag <joueur> Aurexalium      Le retirer :  /tag <joueur> off
+# Les tags sont enregistrés dans data.yml.  Après avoir modifié ce fichier : /tag reload
+
+enabled: true
+
+# --- Suivi du joueur ---
+mode: ride               # ride     = collé à la tête comme un vrai nametag, aucun retard (recommandé)
+                         # explicit = hauteur réglable avec /tag height, mais léger retard quand on court
+
+# --- Couleurs (codes & ; &l = gras) ---
+# Avec les valeurs par défaut, l'animation donne en continu :  &6Aurex&e&la&f&ll&e&li&6&lum
+base-color: "&6&l"       # couleur des lettres au repos (or)
+edge-color: "&e&l"       # lettres au bord du reflet (jaune)
+shine-color: "&f&l"      # lettre au centre du reflet (blanc)
+
+# --- Animation ---
+shine-width: 3           # taille du reflet : 3 = jaune-BLANC-jaune ; 1 = une seule lettre blanche ; 5, 7... = plus large
+pause: 6                 # images de pause (tout en or) entre deux passages
+speed-ticks: 3           # vitesse : plus petit = plus rapide / plus fluide (3 = ~7 images/s)
+direction: ltr           # ltr = de gauche à droite ; rtl = de droite à gauche
+
+# --- Position ---
+height: 2.4              # hauteur en blocs au-dessus des pieds : plus grand = plus haut
+                         # Utilisée en mode explicit ET pour le tag que tu vois sur toi-même
+                         # Se règle aussi en jeu : /tag height <valeur>  (ça prend le dessus sur ce fichier)
+sneak-drop: 0.15         # de combien le tag descend quand le joueur est accroupi
+self-prediction: true    # le tag sur ton propre écran anticipe ton déplacement (compense le ping)
+
+# --- Affichage ---
+view-distance: 32        # distance maximale (blocs) à laquelle on voit le tag
+show-self: true          # le joueur voit aussi son propre tag ; false = comme un vrai nametag, tu ne vois pas le tien
+disabled-worlds: []      # mondes sans tag, ex : [world_nether]
+
+messages:
+  reloaded: "&6AurexaTag &e>> &aConfiguration rechargée."
+  no-permission: "&cPermission refusée."

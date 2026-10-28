@@ -1,0 +1,13 @@
+name: AurexaTag
+main: fr.aurexa.tag.AurexaTag
+version: 1.0.0
+description: Tag anime au-dessus de la tete de certains joueurs
+commands:
+  tag:
+    description: Donner un tag anime a un joueur
+    aliases: [atag, aurexatag]
+    usage: /tag <joueur> <texte>
+permissions:
+  aurexatag.admin:
+    description: Gerer les tags
+    default: op
